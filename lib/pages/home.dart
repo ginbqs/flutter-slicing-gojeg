@@ -98,55 +98,66 @@ class HomePage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
               child: Container(
+                padding: const EdgeInsets.only(bottom: 8),
                 decoration: BoxDecoration(
                   color: blue1,
                   borderRadius: BorderRadius.circular(15),
                 ),
-                child: Row(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 10, right: 8),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                    Container(
+                      height: 17,
+                      child: Stack(
+                        clipBehavior: Clip.none,
                         children: [
-                          Container(
-                            height: 8,
-                            width: 2,
-                            decoration: BoxDecoration(
-                              color: const Color(0xFFBBBBBB),
-                              borderRadius: BorderRadius.circular(1),
-                            ),
-                          ),
-                          SizedBox(height: 4),
-                          Container(
-                            height: 8,
-                            width: 2,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(1),
+                          Positioned(
+                            left: 24,
+                            top: 0,
+                            child: Container(
+                              height: 11,
+                              width: 118,
+                              decoration: BoxDecoration(
+                                color: const Color(0xFF9CCDDB),
+                                borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(8),
+                                  bottomRight: Radius.circular(8),
+                                ),
+                              ),
                             ),
                           ),
                         ],
                       ),
                     ),
-                    Column(
+                    SizedBox(
+                      height: 6,
+                    ),
+                    Row(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 4),
-                          child: Container(
-                            height: 11,
-                            width: 118,
-                            decoration: BoxDecoration(
-                              color: const Color(0xFF9CCDDB),
-                              borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(8),
-                                bottomRight: Radius.circular(8),
+                          padding: const EdgeInsets.only(left: 10, right: 8),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                height: 8,
+                                width: 2,
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFFBBBBBB),
+                                  borderRadius: BorderRadius.circular(1),
+                                ),
                               ),
-                            ),
+                              SizedBox(height: 4),
+                              Container(
+                                height: 8,
+                                width: 2,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(1),
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
-                        SizedBox(
-                          height: 6,
                         ),
                         Container(
                           height: 68,
@@ -172,33 +183,34 @@ class HomePage extends StatelessWidget {
                             ],
                           ),
                         ),
-                      ],
-                    ),
-                    ...iconGopay.map(
-                      (gopay) => Flexible(
-                        fit: FlexFit.tight,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              width: 24,
-                              height: 24,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(8),
-                                color: Colors.white,
-                              ),
-                              child: SvgPicture.asset(
-                                'assets/icons/${gopay.icon}.svg',
-                                color: blue1,
-                              ),
+                        ...iconGopay.map(
+                          (gopay) => Flexible(
+                            fit: FlexFit.tight,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  width: 24,
+                                  height: 24,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    color: Colors.white,
+                                  ),
+                                  child: SvgPicture.asset(
+                                    'assets/icons/${gopay.icon}.svg',
+                                    color: blue1,
+                                  ),
+                                ),
+                                Text(
+                                  gopay.title,
+                                  style:
+                                      regular14.copyWith(color: Colors.white),
+                                )
+                              ],
                             ),
-                            Text(
-                              gopay.title,
-                              style: regular14.copyWith(color: Colors.white),
-                            )
-                          ],
+                          ),
                         ),
-                      ),
+                      ],
                     ),
                   ],
                 ),

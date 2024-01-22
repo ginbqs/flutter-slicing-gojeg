@@ -1,6 +1,9 @@
 # gojeg
 
 A new Flutter project.
+![gif 0](https://github.com/ginbqs/flutter-slicing-gojeg/blob/master/2024-01-22_22-55-56.gif)
+![Screenshoot 1](https://github.com/ginbqs/flutter-slicing-gojeg/blob/master/2024-01-22_22-48.png)
+![Screenshoot 2](https://github.com/ginbqs/flutter-slicing-gojeg/blob/master/2024-01-22_22-49.png)
 
 ## Getting Started
 
